@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>{{TITLE}}</title>
+    <title>10 astuces SVG qui vont vous sauver la vie - KiwiParty 2016</title>
 
-    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="description" content="SVG est partout. Mais SVG est capricieux. Tout ne marche pas toujours comme on le voudrait. Tour d'horizon de ses caractéristiques, des pièges à éviter et des petites choses à savoir pour démarrer sans encombres.">
 
     <link rel="icon" href="http://iamvdo.me/images/favicon.png"/>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/iamvdo.css">
+    <link rel="stylesheet" href="css/iamvdo-kiwiparty16.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -23,15 +24,17 @@
     </script>
   </head>
   <body>
+
     <div class="reveal iamvdo language-css">
       <div class="slides">
 
         <section>
-          <h1>{{TITLE}}</h1>
-          <h2>{{SUBTITLE}}</h2>
+          <h1>10 astuces SVG qui vont vous sauver la vie</h1>
+          <h2>#SVGtips</h2>
           <p class="u-aligncenter u-small u-margin">
             Vincent De Oliveira &middot; <a href="http://twitter.com/iamvdo">@iamvdo</a>
           </p>
+          <h1 class="fragment Conseil">10 astuces SVG dans un talk de 20 minutes alors qu’il aurait fallu 3 bonnes heures</h1>
         </section>
 
         <section class="me">
@@ -49,11 +52,624 @@
         </section>
 
         <section class="Jumbo">
-          <p class="Jumbo-title">{{TITLE}}</p>
+          <p class="Jumbo-title Jumbo-title--big">Pourquoi SVG ?</p>
           <div class="fragment">
-            <p class="Jumbo-text">{{TEXT}}</p>
-            <p class="Jumbo-text">{{TEXT}}</p>
+            <p class="Jumbo-text">Scalable Vector Graphics</p>
+            <p class="Jumbo-text">HD ready</p>
+            <div class="Jumbo-text">Parfait pour icones, logos</div>
+            <p class="Jumbo-text">XML = facile à modifier</p>
           </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 0.</small></div> Apprendre SVG</h1>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 0.</small></div> Apprendre SVG</h1>
+        </section>
+
+        <section data-background="images/desicion-tree-learn-svg.jpg" data-background-size="50% auto" data-background-position="center right">
+          <div style="width: 50%">
+            <h2>Apprendre SVG</h2>
+            <ul>
+              <li class="fragment">C’est facile !</li>
+              <li class="fragment">Vous l’avez fait pour HTML.</li> 
+            </ul>
+            <p class="fragment Conseil"><strong>Objectif</strong> Comprendre (et modifier) ce qui sort de Illustrator, de Sketch ou autre</p>
+          </div>
+        </section>
+
+        <section class="Slide--half-background">
+        <div class="Slide Slide--half">
+          <div class="Slide-side" style="">
+            <h2>Les bases SVG</h2>
+            <ol>
+              <li class="fragment" data-fragment-index="1">Structure minimale</li>
+              <li class="fragment" data-fragment-index="2">Éléments classiques</li>
+              <li class="fragment" data-fragment-index="3">Principes de bases</li>
+            </ol>
+            <p class="fragment Conseil"><strong>Dans tous les cas</strong> Utiliser un outil d’optimisation : SVGOMG (SVGO), workflow, etc.</p>
+          </div>
+          <div class="Slide-side Slide-side--code" style="">
+<span class="fragment" data-fragment-index="1">&lt;svg viewBox="0 0 100 200"></span>
+  <span class="fragment" data-fragment-index="3">&lt;defs></span>
+    <span class="fragment" data-fragment-index="3">&lt;rect id="el" width="10" height="10"/></span>
+  <span class="fragment" data-fragment-index="3">&lt;/defs></span>
+  
+  <span class="fragment" data-fragment-index="2">&lt;rect width="50" height="50"/></span>
+  <span class="fragment" data-fragment-index="2">&lt;circle cx="50" cy="50" r="20"/></span>
+  
+  <span class="fragment" data-fragment-index="3">&lt;use xlink:href="#el"/></span>
+<span class="fragment" data-fragment-index="1">&lt;/svg></span>
+          </div>
+        </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 1.</small></div> Définissez toujours un <code>viewBox</code></h1>
+        </section>
+
+        <section class="Showcase">
+          <h2>Le SVG, le <em>viewport</em> et le <code>viewBox</code></h2>
+          <iframe src="demos/1-viewbox.html" frameborder="0" width="1000" height="400"></iframe>
+        </section>
+      
+        <section>
+          <h2>Le <code>viewBox</code></h2>
+          <img src="images/1.viewbox-syntax.jpg" alt="">
+          <ul>
+            <li class="fragment">Avec un B majuscule</li>
+            <li class="fragment">Définit :
+              <ul>
+                <li>le système de coordonnées</li>
+                <li>l’aspect ratio (géré ensuite avec <code>preserveAspectRatio</code>)</li>
+              </ul>
+            </li>
+            <li class="fragment">Permet le redimensionnement</li>
+            <!--
+            <li class="fragment">Pas que sur SVG
+              <ul>
+                <li>aussi <code>&lt;symbol></code>, <code>&lt;pattern></code>, <code>&lt;image></code>, <code>&lt;marker></code>, <code>&lt;view></code></li>
+              </ul>
+            </li>
+            -->
+          </ul>
+          <div class="fragment Conseil">
+            <p><strong>Indispensable !</strong></p>
+            <p>Et notamment pour IE</p>
+          </div>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">C’est plus facile si le <code>viewBox</code> est carré.</p>
+          <p class="Jumbo-text fragment">Et si le <em>viewport</em> l’est aussi !</p>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 2.</small></div> Définissez <span class="u-small">(quasiment)</span> toujours <code>width</code> et <code>height</code></h1>
+        </section>
+
+        <section>
+          <h2><code>width</code> et <code>height</code></h2>
+          <img src="images/2.width-height-syntax.jpg" alt="">
+          <ul>
+            <li class="fragment">N’apporte rien en soit</li>
+            <li class="fragment">Mais fixe un bug d’aspect ratio sur IE</li>
+            <li class="fragment">Quasiment toujours :
+              <ul>
+                <li>en fonction de la méthode d’inclusion</li>
+                <li>si vous voulez un SVG responsive</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="fragment Conseil">Beaucoup déconseille, moi je conseille. #avisContraire</p>
+        </section>
+
+        <section>
+        <section class="Slide--half-background">
+        <div class="Slide Slide--half">
+          <div class="Slide-side" style="">
+            <h2>Cas d’utilisation</h2>
+            <h3>Empêcher un SVG trop gros pendant le chargement du CSS</h3>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Avec <code>viewBox</code>, SVG responsive sans CSS</li>
+              <li class="fragment" data-fragment-index="2">Utilisez CSS</li>
+              <li class="fragment" data-fragment-index="3">Fixez aussi <code>width</code> et <code>height</code></li>
+              <li class="fragment">Et même 0 !</li>
+            </ul>
+            <div class="fragment Conseil">
+              <p>Fonctionne ainsi grâce à la <a href="#/cascade">cascade SVG</a></p>
+              <p>Les attributs de présentation sont toujours surclassés par CSS</p>
+            </div>
+          </div>
+          <div class="Slide-side Slide-side--code" style="">
+<span class="fragment" data-fragment-index="1">&lt;svg viewBox="0 0 100 100"</span><span class="fragment" data-fragment-index="3"> width="50" height="50"></span></span>
+  <span class="fragment" data-fragment-index="1">...</span>
+<span class="fragment" data-fragment-index="1">&lt;/svg></span>
+
+
+<span class="fragment" data-fragment-index="2">svg {
+  width: 50px;
+  height: 50px;
+}</span>
+          </div>
+        </div>
+        </section>
+
+        <section id="cascade">
+          <h2>Cascade des styles SVG</h2>
+          <ol>
+            <li>Attributs de présentation (<code>width</code>, <code>height</code>, <code>fill</code>, <code>stroke</code>, etc.)</li>
+            <li>Feuille de style externe <code>&lt;?xml-stylesheet type="text/css" href="styles.css"?></code></li>
+            <li>Styles externes <code>&lt;style type="text/css">…&lt;/style></code></li>
+            <li>Styles internes <code>&lt;style type="text/css">…&lt;/style></code></li>
+            <li>Styles inline <code>style="…"</code></li>
+          </ol>
+        </section>
+        </section>
+
+        <section>
+          <img src="images/2.width-height-codepen.jpg" alt="">
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 3.</small></div> Réutilisez les objets créés</h1>
+        </section>
+
+        <section>
+          <h2><code>&lt;defs></code></h2>
+          <img src="images/3.defs-syntax.jpg" alt="">
+          <ul>
+            <li class="fragment">Permet de créer des objets sans les afficher</li>
+            <li class="fragment">Formes, filtres, masques, etc.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>&lt;symbol></code></h2>
+          <img src="images/3.symbol-syntax.jpg" alt="">
+          <ul>
+            <li class="fragment">Idem <code>&lt;defs></code></li>
+            <li class="fragment">Plus orienté … symboles (!)</li>
+            <li class="fragment">A son propre <code>viewBox</code>
+              <ul>
+                <li><code>&lt;symbol viewBox="0 0 100 100"></code></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>&lt;use></code></h2>
+          <img src="images/3.use-syntax.jpg" alt="">
+          <ul>
+            <li class="fragment">Utilise un objet existant (visible ou non)</li>
+            <li class="fragment">Référence via son <code>id</code></li>
+            <li class="fragment">Attention au namespace différent <code>xlink</code> (ajouter <code>xmlns:xlink="…"</code> si SVG non inline)</li>
+            <li class="fragment">Fonctionne depuis fichier externe (Edge+)</li>
+          </ul>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-text ">Après modifs, ne plus ré-enregistrer le SVG dans un éditeur</p>
+          <p class="Jumbo-title fragment">Never. Ever.</p>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 4.</small></div> Utilisez la méthode d’inclusion adaptée à vos besoins</h1>
+        </section>
+
+        <section>
+          <table>
+            <tr>
+              <th style="width:265px;"></th>
+              <th>Cache</th>
+              <th>Req. HTTP</th>
+              <th>CSS embed</th>
+              <th>CSS anim</th>
+              <th>CSS interaction</th>
+              <th>JS embed</th>
+            </tr>
+            <tr>
+              <th style="width:265px;"><code>&lt;img></code></th>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">X</td>
+              <td class="u-nope">X</td>
+            </tr>
+            <tr>
+              <th style="width:265px;"><code>background-image</code></th>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">X</td>
+              <td class="u-nope">X</td>
+            </tr>
+            <tr>
+              <th style="width:265px;">inline (HTML)</th>
+              <td class="u-nope">X</td>
+              <td class="u-yep">X</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+            </tr>
+            <tr>
+              <th style="width:265px;"><code>&lt;use></code> interne</th>
+              <td class="u-nope">X</td>
+              <td class="u-yep">X</td>
+              <td class="u-yep">✓</td>
+              <td class="u-buggy">~</td>
+              <td class="u-buggy">~</td>
+              <td class="u-buggy">~</td>
+            </tr>
+            <tr>
+              <th style="width:265px;"><code>&lt;use></code> externe</th>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">✓</td>
+              <td class="u-buggy">~</td>
+              <td class="u-buggy">~</td>
+              <td class="u-buggy">~</td>
+              <td class="u-buggy">~</td>
+            </tr>
+            <tr>
+              <th style="width:265px;"><code>&lt;object></code>, <code>&lt;embed></code>, <code>&lt;iframe></code></th>
+              <td class="u-yep">✓</td>
+              <td class="u-nope">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+              <td class="u-yep">✓</td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">Ça dépend<sup class="u-sansserif">™</sup></p>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 5.</small></div> Oubliez tout ce que vous savez sur CSS</h1>
+        </section>
+
+        <section class="Showcase">
+          <img src="images/5.position-absolute-meme.jpg" alt="">
+        </section>
+
+        <section>
+          <h2>Pas de <em>box-model</em> CSS en SVG</h2>
+          <ul>
+            <li class="fragment">Tout est en position absolue (canvas SVG)</li>
+            <li class="fragment">Pas de position relative</li>
+            <li class="fragment">Pas de <code>z-index</code></li>
+            <li class="fragment">Pas de flux de positionnement</li>
+            <li class="fragment">Pas vraiment de relations entre les éléments</li>
+            <li class="fragment">Pas d’alignement</li>
+            <li class="fragment">Pas de marges</li>
+            <li class="fragment">Pas toujours les mêmes propriétés CSS : <code>background</code> = <code>fill</code>, <code>border</code> = <code>stroke</code>, etc.</li>
+          </ul>
+          <p class="fragment Conseil">Pas plein de trucs cools en fait !</p>
+        </section>
+
+        <section>
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">Mais c’est pas grave</p>
+          <p class="Jumbo-text fragment">Éditeur graphique : dessinez !</p>
+          <p class="Jumbo-text fragment">Sinon : <code>transform</code>, <code>x</code>/<code>y</code>, <code>viewBox</code></p>
+        </section>
+
+        <section>
+          <h2>Mais c’est pas grave</h2>
+<pre><code class="language-markup" contenteditable="" spellcheck="false">&lt;svg viewBox="0 0 100 100">
+  &lt;rect width="50" height="50" x="50%" y="50%" transform="translate(-25 -25)" />
+&lt;/svg>
+</code></pre>
+<pre><code class="language-markup" contenteditable="" spellcheck="false">&lt;!-- SVG imbriqués -->
+&lt;svg viewBox="0 0 100 100">
+  &lt;svg viewBox="-25 -25 100 100">
+    &lt;rect width="50" height="50" />
+  &lt;/svg>
+&lt;/svg>
+</code></pre>
+<pre><code class="language-markup" contenteditable="" spellcheck="false">&lt;!-- identique mais avec symbol+use -->
+&lt;svg viewBox="0 0 100 100">
+  &lt;symbol id="symbol" viewBox="-25 -25 100 100">
+    &lt;rect width="50" height="50" />
+  &lt;/symbol>
+  &lt;use xlink:href="#symbol" />
+&lt;/svg>
+</code></pre>
+        </section>
+        </section>
+
+        <section class="Slide--half-background">
+        <div class="Slide Slide--half">
+          <div class="Slide-side" style="">
+            <h3>Astuce pour <code>&lt;text></code></h3>
+            <div class="SvgParentContainer">
+              <iframe src="demos/5-text.html" frameborder="0" height="400" width="100%"></iframe>
+            </div>
+          </div>
+          <div class="Slide-side Slide-side--code" style="">
+&lt;text
+  x="50%" y="50%"
+  dominant-baseline="central"
+  text-anchor="middle">
+  HELLO
+&lt;/text>
+          </div>
+        </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 6.</small></div> N’utilisez pas les transformations CSS (ni les animations) <div class="u-small"><small>à mon grand regret :(</small></h1>
+        </section>
+
+        <section>
+          <h2>Le mec, il s’appelle «On»</h2>
+          <ul>
+            <li>Transform SVG != Transform CSS</li>
+            <li class="fragment">Différence d’origines de transformation
+              <ul>
+                <li>HTML == <code>transform-origin: 50% 50%</code> (de l’élément)</li>
+                <li>SVG == <code>transform-origin: 0 0</code> (du canvas)</li>
+              </ul>
+            </li>
+            <li class="fragment">Ensuite
+              <ul>
+                <li>Origine en pourcentages : relative à l’élément</li>
+                <li>Origine absolue : relative au canvas SVG</li>
+              </ul>
+            </li>
+            <li class="fragment">Mais, y’a un bug dans Firefox</li>
+            <li class="fragment">Enfin, ça c’était avant</li>
+            <li class="fragment">Parce que changement de spec…</li>
+            <li class="fragment">Maintenant
+              <ul>
+                <li>origine dépend de <code>transform-box: border-box | fill-box | view-box</code></li>
+              </ul>
+            </li>
+            <li class="fragment">Et donc, Firefox est OK, c'est un bug Chrome</li>
+            <li class="fragment">Quoique, pour l’instant il faut activer un flag dans Firefox</li>
+            <li class="fragment">Et IE dans tout ça ?</li>
+          </ul>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">Pas de support du tout dans IE/Edge</p>
+          <p class="Jumbo-text fragment">IE le sauveur</p>
+          <div class="Conseil fragment">
+            <p>Utilisez les transformations SVG <small>(mais pas de pourcentage en SVG)</small></p>
+            <p><small>ou</small></p>
+            <p>Utilisez JavaScript (GSAP, SnapSVG, etc.)</p>
+          </div>
+        </section>
+
+        <section class="Slide">
+          <h2>Animations</h2>
+          <ul>
+            <li class="fragment">Meilleur support</li>
+            <li class="fragment">Animation CSS
+              <ul>
+                <li>Support depuis Edge</li>
+              </ul>
+            </li>
+            <li class="fragment">SMIL : pas de support IE, deprecated Chrome</li>
+          </ul>
+          <div class="Conseil fragment">
+            <p>Utilisez JavaScript</p>
+            <p><small>ou</small></p>
+            <p><a href="https://medium.com/@fmuaddib/the-following-are-the-possible-ways-to-create-professional-animations-in-svg-9d4caca5f4ec#.jc0xr25j5">d’autres outils</a></p>
+          </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 7.</small></div> Creéz des sprites comme avant</h1>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">Good ol’ days</p>
+          <p class="Jumbo-text fragment"><code>&lt;symbol> + &lt;use> (ou <code>&lt;svg></code>)</code></p>
+          <p class="Jumbo-text fragment"><code>background-image</code></p>
+          <p class="Jumbo-text fragment"><code>background-position</code></p>
+        </section>
+
+        <section class="Slide--half-background">
+        <div class="Slide Slide--half" style="align-items: center;height: 100%;">
+          <div class="Slide-side">
+            <img style="border-width: 1px" src="images/7.svg-sprites.svg" alt="">
+            <p class="Image-legend">icons.svg</p>
+          </div>
+          <div class="Slide-side Slide-side--code" style=""><span class="fragment" data-fragment-index="1">&lt;svg xmlns="…" xmlns:xlink="…"
+  viewBox="0 0 32 192"
+  width="32" height="192"></span>
+
+  <span class="fragment" data-fragment-index="5">&lt;style>
+    .hover {
+      fill: white;
+    }
+  &lt;/style></span>
+
+  <span class="fragment" data-fragment-index="2">&lt;symbol id="clock">
+    &lt;path d="…"/>
+  &lt;/symbol></span>
+  
+  <span class="fragment" data-fragment-index="3">&lt;use xlink:href="#clock"/></span>
+  <span class="fragment" data-fragment-index="4">&lt;use xlink:href="#clock" y="32" <span class="fragment" data-fragment-index="5">class="hover"</span>/></span>
+
+<span class="fragment" data-fragment-index="1">&lt;/svg></span>
+          </div>
+        </div>
+        </section>
+
+        <section class="Slide--half-background">
+        <div class="Slide Slide--half" style="align-items: center;height: 100%;">
+          <div class="Slide-side">
+            <iframe class="u-margin-auto u-no" data-fragment-index="1" src="demos/7-sprites.html" frameborder="0" height="330"></iframe>
+          </div>
+          <div class="Conseil fragment" data-fragment-index="6">
+            <p>Fonctionne partout IE9+ !</p>
+          </div>
+          <div class="Slide-side Slide-side--code" style="">
+<span class="" data-fragment-index="1">.Icon {
+  background-image: url(icons.svg);
+  background-size: cover;
+  background-position: 0 0;
+}
+.Icon:hover {
+  background-position: 0 -100%;
+}</span>
+          </div>
+        </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 8.</small></div> Obtenez des bordures bien nettes</h1>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">C’est du SVG, mais c’est flou ‽</p>
+          <div class="Jumbo-text fragment">C’est flou ça !</div>
+        </section>
+
+        <section>
+          <h2>Le problème</h2>
+          <img src="images/8.stroke-centre.jpg" alt="Les bordures d’un élément SVG sont dessinées à cheval sur le bord. Des bordures non multiple de 2 sont donc floues (ou en fonction du ratio Pixel CSS vs Pixel physique)">
+        </section>
+
+        <section>
+          <h2>Les solutions</h2>
+          <table class="Table--bright">
+            <tr>
+              <td colspan="2">
+                <iframe src="demos/8-stroke-0.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
+                <p>Bordure floue</p>
+              </td>
+              <td class="fragment" colspan="2">
+                <iframe src="demos/8-stroke-1.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
+                <p>Décaler d’½ pixel votre forme</p>
+                <p><small><code>transform=translate(.5 .5)</code></small></p>
+              </td>
+              <td class="fragment" colspan="2">
+                <iframe src="demos/8-stroke-3.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
+                <p><code>shape-rendering:</code> <code>crispEdges</code></p>
+                <p><small>mais pas de support IE/Edge</small></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="fragment" colspan="3">
+                <iframe src="demos/8-stroke-2.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
+                <p>Bordure x2 + <code>clip-path</code></p>
+                <p><small>mais crée bordure interne</small></p>
+              </td>
+              <td class="fragment" colspan="3">
+                <iframe src="demos/8-stroke-4.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
+                <p>Bordure x2 + <code>paint-order</code></p>
+                <p><small>mais crée bordure externe</small></p>
+                <p><small>mais pas de support IE/Edge</small></p>
+              </td>
+            </tr>
+          </table>
+          <div class="Conseil fragment">
+            <p class="u-aligncenter"><code>stroke-alignment</code> prévu pour SVG2<br> <small>(pas de support actuellement)</small></p>
+          </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 9.</small></div> Gérez la taille des bordures</h1>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">«Une bordure de <code>5px</code> ? No problem.»</p>
+          <p class="Jumbo-text fragment">«Euh, t’es sûr&middot;e que ça fait <code>5px</code> là ?»</p>
+        </section>
+
+        <section>
+          <h2>stroke-width, -dasharray, etc.</h2>
+          <table>
+            <tr>
+              <td style="font-size: 2em">
+                <p class="u-aligncenter"><code>5</code></p>
+                <p class="u-aligncenter" style="font-size: .5em;margin-top: 2em;">=viewBox</p>
+              </td>
+              <td style="font-size: 2em">
+                <p class="u-aligncenter"><code>5%</code></p>
+                <p class="u-aligncenter" style="font-size: .5em;margin-top: 2em;">=viewport</p>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h2>Les solutions</h2>
+          <iframe src="demos/9-stroke.html" frameborder="0" width="800" height="165"></iframe>
+          <iframe class="fragment" src="demos/9-stroke-1.html" frameborder="0" width="800" height="105"></iframe>
+          <div class="fragment">
+            <p class="u-small">Avec <code>vector-effect: non-scaling-stroke</code> (mais pas de support IE/Edge)</p>
+            <iframe src="demos/9-stroke-2.html" frameborder="0" width="800" height="105"></iframe>
+          </div>
+        </section>
+
+        <section class="Part">
+          <h1><div class="u-small"><small>Astuce 10.</small></div> Créez un SVG fluide, même inline, cross-browser</h1>
+        </section>
+
+        <section class="Jumbo">
+          <p class="Jumbo-title Jumbo-title--big">Rien à faire, normalement</p>
+          <p class="Jumbo-text fragment">Mais quand même !</p>
+        </section>
+
+        <section>
+          <ul>
+            <li>En fonction de la méthode d’embed :
+              <ul>
+                <li><code>background-image: 100%</code>, <code>cover</code>/<code>contain</code> ou fixes</li>
+                <li><code>&lt;img></code> : <code>width: 100%</code></li>
+                <li><code>&lt;object></code>/<code>&lt;embed></code> : <code>width: 100%</code></li>
+                <li>Inline SVG, <code>&lt;iframe></code> : <em>Padding Hack</em></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="fragment">
+            <h3><em>Padding Hack</em></h3>
+            <ul>
+              <li>SVG
+                <ul>
+                  <li>Supprimer les attributs <code>width</code> et <code>height</code></li></li>
+                </ul>
+              </li>
+              <li>Créez conteneur
+                <ul>
+                  <li><code>width: xx</code>, <code>height: 0</code></li>
+                  <li><code>padding</code> en % = ratio hauteur/largeur du SVG</li>
+                  <li><code>position: relative</code></li>
+                </ul>
+              </li>
+              <li>SVG embed (inline ou <code>&lt;iframe></code>)
+                <ul>
+                  <li><code>position: absolute</code></li>
+                  <li><code>top: 0</code>, <code>left: 0</code>, <code>width: 100%</code>, <code>height: 100%</code></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Responsive SVG</h2>
+          <div class="SvgContainer" style="width:50%;border: 5px solid white;padding-top: calc(58.333% / 2);overflow: hidden;resize: both; margin: 50px auto;">
+            <iframe src="images/10.landscape.svg" frameborder="0"></iframe>
+          </div>
+        </section>
+
+        <section class="me">
+          <h2>Merci, <span>questions?</span></h2>
+          <p class="u-aligncenter">Vincent De Oliveira &middot; <a href="http://twitter.com/iamvdo">@iamvdo</a></p>
+          <p class="u-aligncenter"><a href="http://slides.iamvdo.me/kiwiparty16">slides.iamvdo.me/kiwiparty16</a></p>
         </section>
 
       </div>
@@ -61,9 +677,6 @@
 
     <div class="info-overlay" id="info-twitter">
       <a href="https://twitter.com/iamvdo">@iamvdo</a>
-    </div>
-    <div class="info-overlay" id="info-slides">
-      <a href="{{LINK}}">{{LINK}}</a>
     </div>
 
     <script src="lib/js/head.min.js"></script>
@@ -74,11 +687,11 @@
       Reveal.initialize({
         history: true,
 
+        //width: window.innerWidth,
+        //height: window.innerHeight,
+
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-          { src: 'plugin/markdown/marked.js' },
-          { src: 'plugin/markdown/markdown.js' },
-          { src: 'plugin/notes/notes.js', async: true },
           { src: 'plugin/prismjs/prism.js', async: true, callback: function () { Prism.highlightAll(); } },
           { src: 'plugin/prefixfree/prefixfree.js', async: true },
           { src: 'plugin/live-coding/live-coding.js', async: true, condition: function() { return !!document.body.classList; }},

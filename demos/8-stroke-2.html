@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <svg viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <rect id="rect" width="100" height="100" stroke="black" stroke-width="inherit" fill="#00D2B8"></rect>
+      <clipPath id="clip">
+          <use xlink:href="#rect"/>
+      </clipPath>
+    </defs>
+    <use xlink:href="#rect" x="10" y="10" clip-path="url(#clip)" stroke-width="30"/>
+  </svg>
+</body>
+</html>

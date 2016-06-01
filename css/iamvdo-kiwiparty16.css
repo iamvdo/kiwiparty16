@@ -1,0 +1,165 @@
+.Slide {
+
+}
+.Slide--half {
+  display: flex;
+}
+.Slide--half .Slide-side {
+  flex: 0 0 50%;
+  text-align: left;
+}
+.Slide--third .Slide-side {
+  flex: 1 0 33%;
+  text-align: left;
+}
+.reveal .Slide-side--code {
+  font-family: Consolas, Monaco, monospace;
+  font-size: .65em;
+  white-space: pre-wrap;
+  padding-left: 20px;
+}
+.backgrounds .Slide--half-background {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNU/A8AAUcBIofjvNQAAAAASUVORK5CYII=);
+  background-size: 50% 100%;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.u-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.iamvdo.reveal .SvgParentContainer {
+  overflow: hidden;
+  resize: horizontal;
+  position: absolute; z-index: 1;
+  width: 50%;
+}
+.iamvdo.reveal .SvgContainer {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+.iamvdo.reveal .SvgContainer iframe,
+.iamvdo.reveal .SvgContainer svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border: none;
+  box-shadow: none;
+}
+.iamvdo.reveal .SvgContainer:active {
+  /*width: 0; height: 0;*/
+}
+.reveal iframe {
+  border: 5px solid rgba(0,0,0,.8);
+  box-shadow: 0 3px 5px rgba(0,0,0,.5);
+}
+
+.reveal .Conseil {
+  position: absolute;
+  left: 0; right: 0; bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2980b9;
+  color: #fff;
+  padding: 1em;
+  box-shadow: 0 3px 5px rgba(0,0,0,.5);
+  border: 5px dashed white;
+  transform: rotate(0deg) scale(.2);
+  opacity: 0;
+  transition: transform .3s;
+}
+.reveal .Conseil.visible {
+  opacity: 1;
+  transform: rotate(-5deg);
+}
+.reveal .Conseil p {
+  text-align: center;
+}
+.iamvdo.reveal .Image--bg {
+  background: #333;
+}
+
+body {
+  width: calc(100% + 20px);
+  overflow-y: scroll;
+}
+.iamvdo.reveal {
+  overflow: visible;
+}
+.iamvdo.reveal ol code {
+  color: #FFF;
+  font: bold .9em monospace;
+  background: #111;
+  border-radius: 3px;
+  padding: 0 .2em;
+}
+
+.iamvdo.reveal h1 code,
+.iamvdo.reveal h2 code,
+.iamvdo.reveal h3 code {
+  color: inherit;
+  background: none;
+  padding: 0;
+  font-size: 1em;
+  text-shadow: none;
+  line-height: .9em;
+}
+
+.iamvdo.reveal ul,
+.iamvdo.reveal ol {
+  font-size: .9em;
+  margin: 30px .5em 30px 1.5em;
+}
+.iamvdo.reveal .Table--bright td {
+  background: #fff;
+  color: #000;
+}
+.iamvdo.reveal table {
+  table-layout: fixed;
+}
+.iamvdo.reveal table th {
+  font-size: .7em;
+}
+.iamvdo.reveal table th,
+.iamvdo.reveal table td {
+  /*width: 120px;
+  max-width: 120px;*/
+  vertical-align: top;
+}
+.iamvdo.reveal table th:first-child {
+  /*width: 500px;*/
+  text-align: left;
+}
+.iamvdo.reveal table td.u-yep {
+  background: yellowgreen;
+}
+.iamvdo.reveal table td.u-buggy {
+  background: orange;
+}
+.iamvdo.reveal table td.u-nope {
+  background: crimson;
+}
+.iamvdo.reveal table td p {
+  text-align: inherit;
+  margin: 0;
+}
+.iamvdo.reveal sup {
+  vertical-align: text-top;
+}
+.reveal .u-sansserif {
+  font-family: sans-serif;
+}
+.iamvdo.reveal .u-margin-auto {
+  display: block;
+}
+.iamvdo.reveal .Image-legend {
+  margin: 0;
+}

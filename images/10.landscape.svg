@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 560" preserveAspectRatio="xMidYMid meet">
+<style type="text/css">
+	.st0{fill:#825200;}
+	.st1{fill:#294C22;}
+	.st2{fill:#427F37;}
+	.st3{fill:#60B24F;}
+	.st4{display:none;fill:none;}
+	.st5{fill:#FFFFFF;}
+	.st6{display:none;}
+	.st7{fill:#D6FFEC;}
+	.st8{fill:#40755E;}
+	.st9{fill:#ACE56A;}
+	.st10{fill:none;stroke:#E3EDA8;stroke-width:9;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:30,30;}
+	.st11{fill:#72CC5C;}
+	.st12{fill:none;stroke:#E0ED94;stroke-width:9;stroke-linecap:round;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#E0ED94;stroke-width:9;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:29.4596,29.4596;}
+</style>
+<symbol  id="Arbre" viewBox="-41 -101.337 82 202.674">
+	<path class="st0" d="M-4-78v-15.301c0,0-2.016-8.036,5.379-8.036S7.5-93.386,7.5-93.386L7.463-78H-4z"/>
+	<path class="st1" d="M-10.912,12.88c3.845,9.511,10.32,27.723,22.259,0s24.687-58.278,26.306-62.325s8.094-18.212-3.238-24.283
+		c-11.332-6.071-36.019-21.247-67.991,0.405c-13.153,8.094-5.261,20.64-2.631,26.306S-10.912,12.88-10.912,12.88z"/>
+	<path class="st2" d="M-9.734,53.517c3.386,8.375,9.088,24.413,19.601,0s21.74-51.32,23.165-54.884
+		c1.426-3.564,7.128-16.038-2.851-21.383s-31.719-18.71-59.873,0.356c-11.583,7.128-4.633,18.176-2.317,23.165
+		C-29.691,5.761-9.734,53.517-9.734,53.517z"/>
+	<path class="st3" d="M-8.288,90.176c2.916,7.212,7.826,21.023,16.88,0s18.721-44.194,19.949-47.263
+		c1.228-3.069,6.138-13.811-2.455-18.414s-27.314-16.112-51.56,0.307c-9.974,6.138-3.99,15.652-1.995,19.949
+		S-8.288,90.176-8.288,90.176z"/>
+	<polygon class="st4" points="-41,101 41,101 41,-101 -41,-101 	"/>
+</symbol>
+<symbol  id="Nuage_1_" viewBox="-68 -32.819 136 65.638">
+	<path class="st5" d="M-25.935,5.69c0,18.63,41.163,52.194,57.09-3.708c10.762,10.702,44.62,3.853,34.891-34.801l-131.045,0.225
+		C-77.39-5.259-45.541,19.467-25.935,5.69z"/>
+	<polygon class="st4" points="-68,32 68,32 68,-32 -68,-32 	"/>
+</symbol>
+
+<defs>
+	<clipPath id="clip">
+		<rect width="960" height="560"></rect>
+	</clipPath>
+</defs>
+
+<g clip-path="url(#clip)">
+<g id="Ciel">
+	<rect class="st7" width="960" height="560"/>
+</g>
+<g id="Nuage">
+	
+		<use xlink:href="#Nuage_1_"  width="136" height="65.638" x="-68" y="-32.819" transform="matrix(1 0 0 -1 123 81)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Nuage_1_"  width="136" height="65.638" x="-68" y="-32.819" transform="matrix(1 0 0 -1 349 147)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Nuage_1_"  width="136" height="65.638" x="-68" y="-32.819" transform="matrix(1 0 0 -1 866 49)" style="overflow:visible;"/>
+</g>
+<g id="Sol_4">
+	<path class="st5" d="M613.383,138.474c0,0,81.09-118.746,110.617-116.474c52,4,35,134,159.947,182.015
+		C793.947,198.015,613.383,138.474,613.383,138.474"/>
+</g>
+<g id="Sol_3">
+	<path class="st8" d="M430.72,295.773C430.72,295.773,525,258,603,151c26-32,27-30,37-30s16,4,24,12s25,8,46-1s34-6,50,6
+		s128.962,65,128.962,65L430.72,295.773"/>
+</g>
+<g id="arbres_1_-_copie_2">
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.2257 0 0 -0.2257 492.4059 250.4653)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.2257 0 0 -0.2257 512.4059 235.4653)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.2257 0 0 -0.2257 525.4059 241.4653)" style="overflow:visible;"/>
+</g>
+<g id="Sol_2">
+	<path class="st9" d="M-27,333.773c0,0,71-48.773,169-36.773s209,31,311-9s252-164,521-70c0,113,0,356,0,356l-993.268-4.172
+		L-27,333.773z"/>
+</g>
+<g id="arbres_2">
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.4306 0 0 -0.4306 313.9606 302.7804)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.5156 0 0 -0.5156 338.2939 316.0826)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(1 0 0 -1 240 329)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" id="XMLID_2_" x="-41" y="-101.337" transform="matrix(1 0 0 -1 412 371.9998)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(1 0 0 -1 848 425.9998)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.4306 0 0 -0.4306 906.9606 330.7804)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.5156 0 0 -0.5156 159.2939 319.0826)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(0.5156 0 0 -0.5156 67.2939 291.0826)" style="overflow:visible;"/>
+</g>
+<g id="Chemin_2">
+	<path class="st10" d="M727,510.576C686,474,584,435,546,430s-139-81.835,10-110.917s307-10.943,277-51.013
+		s-144.391-69.042-144.391-69.042"/>
+</g>
+<g id="Sol_1">
+	<path class="st11" d="M-27,333.773c0,0,39-39.608,132-14.69S374.473,446,484.237,469S861,524,990,469c0,44,0,118,0,118l-1009-9
+		L-27,333.773z"/>
+</g>
+<g id="arbres_1">
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(1 0 0 -1 240 329)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" id="XMLID_1_" x="-41" y="-101.337" transform="matrix(1 0 0 -1 412 371.9998)" style="overflow:visible;"/>
+	
+		<use xlink:href="#Arbre"  width="82" height="202.674" x="-41" y="-101.337" transform="matrix(1 0 0 -1 848 425.9998)" style="overflow:visible;"/>
+</g>
+<g id="Chemin">
+	<g>
+		<g>
+			<path class="st12" d="M59,569.828c3.75-1.856,7.756-4.87,12.185-8.685"/>
+			<path class="st13" d="M92.904,541.242C132.546,505.547,201.418,456.68,349,500c131.432,38.58,204.023,25.85,238.527,12.417"/>
+			<path class="st12" d="M600.926,506.297c8.666-4.649,12.457-8.297,12.457-8.297"/>
+		</g>
+	</g>
+</g>
+</g>
+<script>
+	var svg = document.querySelector('svg');
+	svg.addEventListener('click', togglePreserveAspectRatio);
+	function togglePreserveAspectRatio () {
+		var par = svg.getAttribute('preserveAspectRatio');
+		if (par === 'xMidYMid meet') {
+			svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+		} else {
+			svg.setAttribute('preserveAspectRatio', 'xMidYMid meet')
+		}
+		
+	}
+</script>
+</svg>

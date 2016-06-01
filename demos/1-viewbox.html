@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by iamvdo (http://jsbin.com/mowuhe/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+html {
+  font: 1em sans-serif;
+  background: #fff;
+}
+
+label,
+input {
+  margin: 1em 0;
+}
+input {
+  margin-right: 1em;
+}
+
+.Canvas {
+  display: block;
+  background: repeating-linear-gradient(-45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 10px, transparent 10px, transparent 20px);
+}
+.Canvas-bg {
+  fill: white;
+}
+
+.Axes {
+  opacity: .5;
+}
+
+.ViewBox,
+.Viewport {
+  fill: transparent;
+  overflow: visible;
+}
+.Canvas > .ViewBox,
+.Canvas > .Viewport,
+.Canvas > .Viewport .ViewBox {
+  opacity: 0;
+}
+.ViewBox-bg {
+  stroke: #ec008c;
+  stroke-width: 2%;
+  stroke-dasharray: 10% 5%;
+}
+.Viewport .ViewBox-bg {
+  stroke-width: 1.333%;
+  stroke-dasharray: 6.667% 3.333%;
+}
+
+.ViewBox-shapes {
+  opacity: .5;
+}
+
+.Text {
+  font-family: 'Bookman Old Style';
+  font-weight: bold;
+  font-style: italic;
+  text-anchor: middle; 
+  dominant-baseline: middle;
+}
+.Text--big {
+  font-size: 30px;
+}
+
+.Viewport-bg {
+  stroke: #8c00ec;
+  stroke-width: 2;
+  stroke-dasharray: 10 5;
+}
+
+.FitLines {
+  opacity: 0;
+}
+
+#check-viewBox:checked ~ .Canvas > .ViewBox {
+  opacity: 1;
+}
+#check-viewport:checked ~ .Canvas > .Viewport {
+  opacity: 1;
+}
+#check-fit:checked ~ .Canvas > .Viewport .ViewBox {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  
+  <label for="check-viewBox">viewBox</label>
+  <input id="check-viewBox" type="checkbox">
+  
+  <label for="check-viewport">viewport</label>
+  <input id="check-viewport" type="checkbox">
+  
+  <label for="check-fit">fit</label>
+  <input id="check-fit" type="checkbox">
+  
+  <label for="select-ratio">preserveAspectRatio</label>
+  <select id="select-ratio">
+    <option value="xMidYMid meet">xMidYMid meet (défaut)</option>
+    <option>xMidYMid slice</option>
+    <option>none</option>
+    <option>xMinYMin meet</option>
+    <option>xMinYMin slice</option>
+    <option>xMaxYMax meet</option>
+  </select>
+  
+  <svg class="Canvas" viewBox="-150 -150 1000 400" width="1000" height="400" preserveAspectRatio="none">
+    
+    <rect class="Canvas-bg" width="50%" height="100%" x="350" y="-150"></rect>
+    
+    <g class="Axes">
+      <rect width="1" height="100%" y="-150" fill="black"></rect>
+      <rect width="50%" height="1" x="-150" fill="black"></rect>
+    </g>
+    
+    <g fill="rgba(0,0,0,.35)">
+        <text class="Text Text--big" x="0" y="-80" transform="rotate(-45)">SVG Canvas</text>
+        <text class="Text" x="-25" y="-15">0, 0</text>
+    </g>
+    
+    <g fill="rgba(0,0,0,.35)" class="ViewBox-shapes">
+      <rect width="60" height="60" x="25" y="40"></rect>
+      <circle cx="140" cy="70" r="32"></circle>
+    </g>
+    
+    <svg class="ViewBox" viewBox="0 0 200 140" width="200" height="140" preserveAspectRatio="xMidYMid meet">
+      <rect class="ViewBox-bg" width="100%" height="100%"></rect>
+      <!--<rect width="100%" height="100%" fill="red"></rect>-->
+      <g fill="#ec008c">
+        <text class="Text Text--big" x="50%" y="50%">viewBox</text>
+        <text class="Text" x="-25" y="15">x, y</text>
+        <text class="Text" x="50%" y="-15">largeur</text>
+        <text class="Text" x="120%" y="50%">hauteur</text>
+      </g>
+    </svg>
+    
+    <svg class="Viewport" viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="" x="450" y="-100">
+      <rect class="Viewport-bg" width="100%" height="100%"></rect>
+      <!-- SVg viewBox 100 70 in viewport 100 100 -->
+      <svg class="ViewBox" id="js-ViewBox" viewBox="0 0 200 140" width="300" height="300" preserveAspectRatio="">
+        <rect class="ViewBox-bg" width="100%" height="100%"></rect>
+        <g fill="rgba(0,0,0,.25)" class="ViewBox-shapes">
+          <rect width="60" height="60" x="25" y="50%" transform="translate(0,-30)"></rect>
+          <circle cx="140" cy="50%" r="32"></circle>
+        </g>
+      </svg>
+      <g fill="#8c00ec">
+        <text class="Text Text--big" x="50%" y="-25">Taille de &lt;svg> = viewport</text>
+    </g>
+    </svg>
+    
+    <g class="FitLines" stroke="rgba(0,0,0,.5)">
+      <polyline points="0,0,500,-100"></polyline>
+      <polyline points="200,0,800,-100"></polyline>
+      <polyline points="0,140,500,200"></polyline>
+      <polyline points="200,140,800,200"></polyline>
+    </g>
+  </svg>
+  
+  
+  
+<script id="jsbin-javascript">
+
+var ratio = document.getElementById('select-ratio');
+var ViewBox = document.getElementById('js-ViewBox');
+ratio.addEventListener('change', function () {
+  var val = this.value;
+  ViewBox.setAttribute('preserveAspectRatio', val);
+  console.log();
+})
+
+</script>
+</body>
+</html>

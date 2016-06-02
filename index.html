@@ -296,12 +296,9 @@
           <h1><div class="u-small"><small>Astuce 5.</small></div> Oubliez tout ce que vous savez sur CSS</h1>
         </section>
 
-        <section class="Showcase">
-          <img src="images/5.position-absolute-meme.jpg" alt="">
-        </section>
-
         <section>
           <h2>Pas de <em>box-model</em> CSS en SVG</h2>
+          <img class="fragment current-visible" src="images/5.position-absolute-meme.jpg" alt="">
           <ul>
             <li class="fragment">Tout est en position absolue (canvas SVG)</li>
             <li class="fragment">Pas de position relative</li>
@@ -366,13 +363,13 @@
         </section>
 
         <section class="Part">
-          <h1><div class="u-small"><small>Astuce 6.</small></div> N’utilisez pas les transformations CSS (ni les animations) <div class="u-small"><small>à mon grand regret :(</small></h1>
+          <h1><div class="u-small"><small>Astuce 6.</small></div> N’utilisez pas les transformations CSS <div class="u-small"><small>à mon grand regret :(</small></h1>
         </section>
 
         <section>
           <h2>Le mec, il s’appelle «On»</h2>
-          <ul>
-            <li>Transform SVG != Transform CSS</li>
+          <ul id="js-reduce">
+            <li>Transform SVG != Transform HTML</li>
             <li class="fragment">Différence d’origines de transformation
               <ul>
                 <li>HTML == <code>transform-origin: 50% 50%</code> (de l’élément)</li>
@@ -385,23 +382,30 @@
                 <li>Origine absolue : relative au canvas SVG</li>
               </ul>
             </li>
-            <li class="fragment">Mais, y’a un bug dans Firefox</li>
-            <li class="fragment">Enfin, ça c’était avant</li>
-            <li class="fragment">Parce que changement de spec…</li>
+            <li class="fragment">Longtemps, y’avait un bug dans Firefox avec les %</li>
+            <li class="fragment">Mais, ça c’était avant</li>
+            <li class="fragment">Le bug Firefox est corrigé (FF41)</li>
+            <li class="fragment">Enfin, ce n’est pas si simple</li>
+            <li class="fragment">Il y a eu un changement de spec…</li>
             <li class="fragment">Maintenant
               <ul>
                 <li>origine dépend de <code>transform-box: border-box | fill-box | view-box</code></li>
               </ul>
             </li>
+            <li class="fragment">Firefox supporte <code>transform-box: border-box | fill-box | view-box</code></li>
             <li class="fragment">Et donc, Firefox est OK, c'est un bug Chrome</li>
             <li class="fragment">Quoique, pour l’instant il faut activer un flag dans Firefox</li>
-            <li class="fragment">Et IE dans tout ça ?</li>
+            <li class="fragment">Modulo les bugs éventuels</li>
+            <li class="fragment">Alors, on fait comment ?</li>
+            <li class="fragment">Qui a raison ?</li>
+            <li class="fragment">IE ?</li>
+            <li class="fragment">Je crois bien…</li>
           </ul>
         </section>
 
         <section class="Jumbo">
           <p class="Jumbo-title Jumbo-title--big">Pas de support du tout dans IE/Edge</p>
-          <p class="Jumbo-text fragment">IE le sauveur</p>
+          <p class="Jumbo-text fragment">#merciIE</p>
           <div class="Conseil fragment">
             <p>Utilisez les transformations SVG <small>(mais pas de pourcentage en SVG)</small></p>
             <p><small>ou</small></p>
@@ -410,7 +414,7 @@
         </section>
 
         <section class="Slide">
-          <h2>Animations</h2>
+          <h2>Ni les animations ?</h2>
           <ul>
             <li class="fragment">Meilleur support</li>
             <li class="fragment">Animation CSS
@@ -421,7 +425,7 @@
             <li class="fragment">SMIL : pas de support IE, deprecated Chrome</li>
           </ul>
           <div class="Conseil fragment">
-            <p>Utilisez JavaScript</p>
+            <p>Utilisez JavaScript (WebAnimations, librairies, etc.)</p>
             <p><small>ou</small></p>
             <p><a href="https://medium.com/@fmuaddib/the-following-are-the-possible-ways-to-create-professional-animations-in-svg-9d4caca5f4ec#.jc0xr25j5">d’autres outils</a></p>
           </div>
@@ -433,7 +437,7 @@
 
         <section class="Jumbo">
           <p class="Jumbo-title Jumbo-title--big">Good ol’ days</p>
-          <p class="Jumbo-text fragment"><code>&lt;symbol> + &lt;use> (ou <code>&lt;svg></code>)</code></p>
+          <p class="Jumbo-text fragment">Créez une image SVG</p>
           <p class="Jumbo-text fragment"><code>background-image</code></p>
           <p class="Jumbo-text fragment"><code>background-position</code></p>
         </section>
@@ -508,6 +512,7 @@
               <td colspan="2">
                 <iframe src="demos/8-stroke-0.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
                 <p>Bordure floue</p>
+                <p><small>Non multiple de 2, etc.</small></p>
               </td>
               <td class="fragment" colspan="2">
                 <iframe src="demos/8-stroke-1.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
@@ -520,13 +525,13 @@
                 <p><small>mais pas de support IE/Edge</small></p>
               </td>
             </tr>
-            <tr>
-              <td class="fragment" colspan="3">
+            <tr class="fragment">
+              <td colspan="3">
                 <iframe src="demos/8-stroke-2.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
                 <p>Bordure x2 + <code>clip-path</code></p>
                 <p><small>mais crée bordure interne</small></p>
               </td>
-              <td class="fragment" colspan="3">
+              <td colspan="3">
                 <iframe src="demos/8-stroke-4.html" class="u-no" frameborder="0" width="120" height="120"></iframe>
                 <p>Bordure x2 + <code>paint-order</code></p>
                 <p><small>mais crée bordure externe</small></p>
@@ -541,11 +546,6 @@
 
         <section class="Part">
           <h1><div class="u-small"><small>Astuce 9.</small></div> Gérez la taille des bordures</h1>
-        </section>
-
-        <section class="Jumbo">
-          <p class="Jumbo-title Jumbo-title--big">«Une bordure de <code>5px</code> ? No problem.»</p>
-          <p class="Jumbo-text fragment">«Euh, t’es sûr&middot;e que ça fait <code>5px</code> là ?»</p>
         </section>
 
         <section>
@@ -657,6 +657,16 @@
           { src: 'plugin/live-coding/live-coding.js', async: true, condition: function() { return !!document.body.classList; }},
           { src: 'plugin/nav/nav.js', async: true}
         ]
+      });
+    </script>
+    <script>
+      Reveal.addEventListener('fragmentshown', function(e) {
+        if (e.fragment.parentNode.id === 'js-reduce') {
+          var fz = getComputedStyle(e.fragment.parentNode).fontSize.replace('px', '');
+          var nfz = fz * 0.97;
+          e.fragment.parentNode.style.fontSize = nfz + 'px';
+        }
+      
       });
     </script>
   </body>

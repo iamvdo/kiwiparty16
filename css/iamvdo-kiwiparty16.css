@@ -24,6 +24,9 @@
   background-position: center right;
   background-repeat: no-repeat;
 }
+.backgrounds .Slide--half-background--light {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=);
+}
 
 .u-hidden {
   position: absolute;

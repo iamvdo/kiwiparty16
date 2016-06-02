@@ -62,7 +62,7 @@
         </section>
 
         <section class="Part">
-          <h1><div class="u-small"><small>Astuce 0.</small></div> Apprendre SVG</h1>
+          <h1><div class="u-small"><small>Astuce 1.</small></div> Apprendre SVG</h1>
         </section>
 
         <section class="Slide--half-background Slide--half-background--light">
@@ -97,6 +97,10 @@
   <span class="fragment" data-fragment-index="3">&lt;defs></span>
     <span class="fragment" data-fragment-index="3">&lt;rect id="el" width="10" height="10"/></span>
   <span class="fragment" data-fragment-index="3">&lt;/defs></span>
+
+  <span class="fragment" data-fragment-index="3">&lt;symbol></span>
+    <span class="fragment" data-fragment-index="3">&lt;path … /></span>
+  <span class="fragment" data-fragment-index="3">&lt;/symbol></span>
   
   <span class="fragment" data-fragment-index="2">&lt;rect width="50" height="50"/></span>
   <span class="fragment" data-fragment-index="2">&lt;circle cx="50" cy="50" r="20"/></span>
@@ -108,7 +112,7 @@
         </section>
 
         <section class="Part">
-          <h1><div class="u-small"><small>Astuce 1.</small></div> Définissez toujours un <code>viewBox</code></h1>
+          <h1><div class="u-small"><small>Astuce 2.</small></div> Définissez toujours un <code>viewBox</code></h1>
         </section>
 
         <section class="Showcase">
@@ -148,7 +152,7 @@
         </section>
 
         <section class="Part">
-          <h1><div class="u-small"><small>Astuce 2.</small></div> Définissez <span class="u-small">(quasiment)</span> toujours <code>width</code> et <code>height</code></h1>
+          <h1><div class="u-small"><small>Astuce 3.</small></div> Définissez <span class="u-small">(quasiment)</span> toujours <code>width</code> et <code>height</code></h1>
         </section>
 
         <section>
@@ -212,49 +216,6 @@
 
         <section>
           <img src="images/2.width-height-codepen.jpg" alt="">
-        </section>
-
-        <section class="Part">
-          <h1><div class="u-small"><small>Astuce 3.</small></div> Réutilisez les objets créés</h1>
-        </section>
-
-        <section>
-          <h2><code>&lt;defs></code></h2>
-          <img src="images/3.defs-syntax.jpg" alt="">
-          <ul>
-            <li class="fragment">Permet de créer des objets sans les afficher</li>
-            <li class="fragment">Formes, filtres, masques, etc.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2><code>&lt;symbol></code></h2>
-          <img src="images/3.symbol-syntax.jpg" alt="">
-          <ul>
-            <li class="fragment">Idem <code>&lt;defs></code></li>
-            <li class="fragment">Plus orienté … symboles (!)</li>
-            <li class="fragment">A son propre <code>viewBox</code>
-              <ul>
-                <li><code>&lt;symbol viewBox="0 0 100 100"></code></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2><code>&lt;use></code></h2>
-          <img src="images/3.use-syntax.jpg" alt="">
-          <ul>
-            <li class="fragment">Utilise un objet existant (visible ou non)</li>
-            <li class="fragment">Référence via son <code>id</code></li>
-            <li class="fragment">Attention au namespace différent <code>xlink</code> (ajouter <code>xmlns:xlink="…"</code> si SVG non inline)</li>
-            <li class="fragment">Fonctionne depuis fichier externe (Edge+)</li>
-          </ul>
-        </section>
-
-        <section class="Jumbo">
-          <p class="Jumbo-text ">Après modifs, ne plus ré-enregistrer le SVG dans un éditeur</p>
-          <p class="Jumbo-title fragment">Never. Ever.</p>
         </section>
 
         <section class="Part">
